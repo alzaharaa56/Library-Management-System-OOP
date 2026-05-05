@@ -1,7 +1,7 @@
 package Menu;
 
 import services.*;
-import models.*;
+import Entites.*;
 import java.util.Scanner;
 
 public class LibraryMenu {

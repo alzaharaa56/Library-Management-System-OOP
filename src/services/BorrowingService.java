@@ -1,7 +1,7 @@
 package services;
 
-import models.LibraryItem;
-import models.Member;
+import Entites.LibraryItem;
+import Entites.Member;
 
 public class BorrowingService {
     private LibraryService libraryService;

@@ -1,6 +1,6 @@
 package services;
 import java.util.ArrayList;
-import models.Member;
+import Entites.Member;
 
 
 public class MemberService {

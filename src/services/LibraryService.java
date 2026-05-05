@@ -1,6 +1,6 @@
 package services;
 import java.util.ArrayList;
-import models.LibraryItem;
+import Entites.LibraryItem;
 
 public class LibraryService {
     private ArrayList<LibraryItem> items = new ArrayList<>();

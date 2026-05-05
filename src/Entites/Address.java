@@ -1,4 +1,4 @@
-package models;
+package Entites;
 
 public class Address {
 

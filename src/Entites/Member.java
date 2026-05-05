@@ -1,4 +1,4 @@
-package models;
+package Entites;
 import java.util.ArrayList;
 
 public class Member {
