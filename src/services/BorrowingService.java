@@ -34,6 +34,9 @@ public class BorrowingService {
         item.setAvailable(false);
         member.borrowItem(item);
         System.out.println("Item " + item.getTitle() + " borrowed successfully by " + member.getName());
+
+
+
     }
 
     public void returnItem(String memberId, String itemId) {
