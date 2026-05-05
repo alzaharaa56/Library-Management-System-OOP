@@ -27,7 +27,8 @@ public class LibraryMenu {
             System.out.println("5. List All Members");
             System.out.println("6. Borrow Item");
             System.out.println("7. Return Item");
-            System.out.println("8. Exit");
+            System.out.println("8. Add DVD");
+            System.out.println("9. Exit");
             System.out.print("Select an option: ");
 
             int choice = scanner.nextInt();
@@ -55,7 +56,10 @@ public class LibraryMenu {
                 case 7:
                     returnProcess();
                     break;
-                case 8:
+                case 8 :
+                    addDVD();
+                    break;
+                case 9:
                     System.out.println("Closing System...");
                     return;
                 default:
@@ -119,5 +123,18 @@ public class LibraryMenu {
 
 
         borrowingService.returnItem(mId, iId);
+    }
+
+    private void addDVD() {
+        System.out.print("Enter ID: ");
+        String id = scanner.nextLine();
+        System.out.print("Enter Title: ");
+        String title = scanner.nextLine();
+        System.out.print("Enter Duration (mins): ");
+        int duration = scanner.nextInt();
+        scanner.nextLine();
+
+        libraryService.addItem(new DVD(id, title, duration));
+        System.out.println("DVD added!");
     }
 }
