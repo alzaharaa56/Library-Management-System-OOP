@@ -18,52 +18,54 @@ public class LibraryMenu {
     }
 
     public void start() {
-        System.out.println("\n--- Library Management System ---");
-        System.out.println("1. Add Book");
-        System.out.println("2. Add Magazine");
-        System.out.println("3. List All Items");
-        System.out.println("4. Register Member");
-        System.out.println("5. List All Members");
-        System.out.println("6. Borrow Item");
-        System.out.println("7. Return Item");
-        System.out.println("8. Add DVD");
-        System.out.println("9. Exit");
-        System.out.print("Select an option: ");
-        int choice = scanner.nextInt();
-        scanner.nextLine();
-        if (choice == 9) {
-            System.out.println("Closing System...");
-            return;
+        while (true) {
+            System.out.println("\n--- Library Management System ---");
+            System.out.println("1. Add Book");
+            System.out.println("2. Add Magazine");
+            System.out.println("3. List All Items");
+            System.out.println("4. Register Member");
+            System.out.println("5. List All Members");
+            System.out.println("6. Borrow Item");
+            System.out.println("7. Return Item");
+            System.out.println("8. Add DVD");
+            System.out.println("9. Exit");
+            System.out.print("Select an option: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    addBook();
+                    break;
+                case 2:
+                    addMagazine();
+                    break;
+                case 3:
+                    libraryService.listAvailableItems();
+                    break;
+                case 4:
+                    addMember();
+                    break;
+                case 5:
+                    memberService.listAllMembers();
+                    break;
+                case 6:
+                    borrowProcess();
+                    break;
+                case 7:
+                    returnProcess();
+                    break;
+                case 8 :
+                    addDVD();
+                    break;
+                case 9:
+                    System.out.println("Closing System...");
+                    return;
+                default:
+                    System.out.println("Invalid option, try again.");
+            }
         }
-        switch (choice) {
-            case 1:
-                addBook();
-                break;
-            case 2:
-                addMagazine();
-                break;
-            case 3:
-                libraryService.listAvailableItems();
-                break;
-            case 4:
-                addMember();
-                break;
-            case 5:
-                memberService.listAllMembers();
-                break;
-            case 6:
-                borrowProcess();
-                break;
-            case 7:
-                returnProcess();
-                break;
-            case 8:
-                addDVD();
-                break;
-            default:
-                System.out.println("Invalid option, try again.");
-        }
-        start();
     }
 
     private void addBook() {
